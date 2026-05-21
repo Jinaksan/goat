@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>야곱이네 염소진액 - Jacob's Goat Farm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght=300;400;500;700&family=Poppins:wght=400;600;700&display=swap');
+        body {
+            font-family: 'Noto Sans KR', 'Poppins', sans-serif;
+        }
+        /* Multilingual Toggle Triggers */
+        .lang-en [data-ko] { display: none; }
+        .lang-ko [data-en] { display: none; }
+    </style>
+</head>
+<body class="lang-ko bg-stone-50 text-stone-800 antialiased">
+
+    <header class="sticky top-0 z-50 bg-stone-900 text-stone-100 shadow-md border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2">
+                <span class="text-amber-400 font-bold text-lg sm:text-xl tracking-tight">
+                    <span data-ko>야곱이네 염소진액</span>
+                    <span data-en>Jacob's Goat Farm</span>
+                </span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-stone-300">
+                <a href="#about" class="hover:text-amber-400 transition" data-ko>농장 소개</a>
+                <a href="#about" class="hover:text-amber-400 transition" data-en>About Us</a>
+                <a href="#health" class="hover:text-amber-400 transition" data-ko>효능 안내</a>
+                <a href="#health" class="hover:text-amber-400 transition" data-en>Benefits</a>
+                <a href="#products" class="hover:text-amber-400 transition" data-ko>상품 및 가격</a>
+                <a href="#products" class="hover:text-amber-400 transition" data-en>Products</a>
+                <a href="#media" class="hover:text-amber-400 transition" data-ko>농장 영상</a>
+                <a href="#media" class="hover:text-amber-400 transition" data-en>Farm Media</a>
+                <a href="#directions" class="hover:text-amber-400 transition" data-ko>복용 가이드</a>
+                <a href="#directions" class="hover:text-amber-400 transition" data-en>Guide</a>
+                <a href="#contact" class="hover:text-amber-400 transition" data-ko>문의 및 위치</a>
+                <a href="#contact" class="hover:text-amber-400 transition" data-en>Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleLanguage()" class="bg-stone-800 hover:bg-stone-700 text-amber-300 border border-stone-700 rounded-full px-3 py-1 text-xs font-semibold transition">
+                    🌐 <span id="langBtnText">English</span>
+                </button>
+                <a href="tel:041-754-8255" class="bg-amber-600 hover:bg-amber-700 text-stone-950 rounded-lg px-3.5 py-1.5 text-xs sm:text-sm font-bold transition flex items-center gap-1 shadow-md">
+                    📞 <span data-ko>주문전화</span><span data-en>Call</span>
+                </a>
+                
+                <button onclick="toggleMobileMenu()" class="md:hidden text-stone-300 focus:outline-none text-xs font-bold border border-stone-700 px-2 py-1 rounded bg-stone-800">
+                    ☰
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-stone-900 border-t border-stone-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-stone-300 font-medium text-sm border-b border-stone-800/50" data-ko>농장 소개</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-stone-300 font-medium text-sm border-b border-stone-800/50" data-en>About Us</a>
+            <a href="#health" onclick="toggleMobileMenu()" class="block py-2 text-stone-300 font-medium text-sm border-b border-stone-800/50" data-ko>효능 안내</a>
+            <a href="#health" onclick="toggleMobileMenu()" class="block py-2 text-stone-300 font-medium text-sm border-b border-stone-800/50" data-en>Benefits</a>
+            <a href="#products" onclick="toggleMobileMenu()" class="block py-2 text-stone-300 font-medium text-sm border-b border-stone-800/50" data-ko>상품 및 가격</a>
+            <a href="#products" onclick="toggleMobileMenu()" class="block py-2 text-stone-300 font-medium text-sm border-b border-stone-800/50" data-en>Products</a>
+            <a href="#media" onclick="toggleMobileMenu()" class="block py-2 text-amber-400 font-medium text-sm border-b border-stone-800/50" data-ko>농장 영상</a>
+            <a href="#media" onclick="toggleMobileMenu()" class="block py-2 text-amber-400 font-medium text-sm border-b border-stone-800/50" data-en>Farm Media</a>
+            <a href="#directions" onclick="toggleMobileMenu()" class="block py-2 text-stone-300 font-medium text-sm border-b border-stone-800/50" data-ko>복용 가이드</a>
+            <a href="#directions" onclick="toggleMobileMenu()" class="block py-2 text-stone-300 font-medium text-sm border-b border-stone-800/50" data-en>Guide</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-stone-300 font-medium text-sm" data-ko>문의 및 위치</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-stone-300 font-medium text-sm" data-en>Contact</a>
+        </div>
+    </header>
+
+    <section class="relative bg-stone-950 text-stone-100 py-16 sm:py-24 overflow-hidden text-center">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-900/40 text-amber-300 border border-amber-800/60 mb-4">
+                ⛰️ <span data-ko>청정 금산 진악산 자연방목 유황흑염소</span>
+                <span data-en>Free-Range Black Goats Pastured Under Mt. Jinaksan</span>
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-6 text-stone-100 leading-tight">
+                <span data-ko>하늘이 준 선물 인삼이 처음 발견된<br><span class="text-amber-400">진악산</span>에서 정성껏 달이는 진액</span>
+                <span data-en>Pure Nature's Gift from Mt. Jinaksan,<br>Crafted for Supreme Well-being</span>
+            </h1>
+            <div class="w-16 h-0.5 bg-amber-500 mx-auto mb-6"></div>
+            <p class="max-w-2xl mx-auto text-sm sm:text-base text-stone-400 leading-relaxed font-light">
+                <span data-ko>저희 야곱이네 염소 진액은 하늘이준 선물 인삼이 처음 발견된 진악산에서 자연 친화적 방법으로 사육한 염소와 엄선된 부재료로 정성껏 달인 진액입니다.</span>
+                <span data-en>Our extract is painstakingly stewed using carefully curated ingredients alongside premium free-range goats pasture-raised through natural, eco-friendly practices on Mount Jinaksan.</span>
+            </p>
+        </div>
+    </section>
+
+    <section id="about" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl p-5 shadow border border-stone-200 flex items-start space-x-3">
+                <span class="text-2xl">📈</span>
+                <div>
+                    <h3 class="font-bold text-stone-900 text-base" data-ko>4고 (四高)</h3>
+                    <h3 class="font-bold text-stone-900 text-base" data-en>4 Highs</h3>
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-1 text-sm font-medium text-stone-600 mt-2">
+                        <div>1) <span data-ko>고단백</span><span data-en>High Protein</span></div>
+                        <div>2) <span data-ko>고칼슘</span><span data-en>High Calcium</span></div>
+                        <div>3) <span data-ko>고철분</span><span data-en>High Iron</span></div>
+                        <div>4) <span data-ko>고비타민</span><span data-en>High Vitamins</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-5 shadow border border-stone-200 flex items-start space-x-3">
+                <span class="text-2xl">📉</span>
+                <div>
+                    <h3 class="font-bold text-stone-900 text-base" data-ko>3저 (三低)</h3>
+                    <h3 class="font-bold text-stone-900 text-base" data-en>3 Lows</h3>
+                    <div class="grid grid-cols-3 gap-x-4 text-sm font-medium text-stone-600 mt-2">
+                        <div>1) <span data-ko>저지방</span><span data-en>Low Fat</span></div>
+                        <div>2) <span data-ko>저칼로리</span><span data-en>Low Calories</span></div>
+                        <div>3) <span data-ko>저콜레스테롤</span><span data-en>Low Cholesterol</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6 bg-stone-900 text-stone-200 rounded-xl p-5 text-center border border-stone-800 shadow-inner">
+            <p class="text-amber-400 font-bold text-xs uppercase tracking-wider mb-2" data-ko>염소는 몸을 따뜻하게 하여 도움을 줍니다</p>
+            <p class="text-amber-400 font-bold text-xs uppercase tracking-wider mb-2" data-en>Goat Supplements Warm Up the Body Systemically</p>
+            <p class="text-xs sm:text-sm text-stone-300 max-w-3xl mx-auto leading-relaxed" data-ko>
+                직장인의 무기력, 피곤 · 기력이 떨어진 어르신 · 손발이 차가운 여성 · 임신준비, 출산 후 산모 회복 · 성장기 어린이, 청소년 · 추위를 많이 타시는 분
+            </p>
+            <p class="text-xs sm:text-sm text-stone-300 max-w-3xl mx-auto leading-relaxed" data-en>
+                Modern workers facing fatigue or lethargy · Elderly dealing with weakened vitality · Women with cold extremities · Pregnancy preparation & postpartum recovery · Growing kids and adolescents · Those highly sensitive to cold weather
+            </p>
+        </div>
+    </section>
+
+    <section class="py-12 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="bg-white p-2.5 rounded-xl shadow border border-stone-200 max-w-sm w-full">
+                    <img src="goats-grazing.jpg" alt="야곱이네 자연방목 유황흑염소" class="w-full h-auto rounded-lg">
+                    <p class="mt-2 text-center text-[11px] text-stone-500 font-medium" data-ko>📸 실제 금산 진악산 농장 방목 현장 사진</p>
+                    <p class="mt-2 text-center text-[11px] text-stone-500 font-medium" data-en>📸 Untouched view of our herd on Mt. Jinaksan</p>
+                </div>
+            </div>
+
+            <div id="health" class="lg:col-span-7 space-y-5">
+                <div class="inline-block px-3 py-1 bg-emerald-950 text-emerald-300 font-bold rounded-lg border border-emerald-800 text-xs sm:text-sm shadow-sm">
+                    ✨ <span data-ko>특별 프리미엄 공정: 염소액기스 지방(기름) 90% 이상 제거 완료!</span>
+                    <span data-en>Premium Refinement: Over 90% of Natural Oils cleanly extracted and removed!</span>
+                </div>
+                
+                <h2 class="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight leading-snug">
+                    <span data-ko>피로와 허약을 보하며 몸속의 기운을<br>끌어 올려주고 마음을 편히 다스립니다.</span>
+                    <span data-en>Restoring Core Exhaustion & Balancing Your Vital Paths</span>
+                </h2>
+                
+                <div class="space-y-3 text-stone-600 text-xs sm:text-sm leading-relaxed border-l-2 border-amber-600 pl-3 bg-stone-100 p-3 rounded-r-lg">
+                    <p data-ko>
+                        염소의 핵심 성분인 <strong>아라키돈산</strong>은 세포재생과 노화방지, 뇌세포 발달에 효과적입니다.
+                    </p>
+                    <p data-en>
+                        <strong>Arachidonic acid</strong>, the primary bio-component of pasture goat extract, is highly effective for systematic cellular regeneration, anti-aging cellular defense, and brain cell developmental synthesis.
+                    </p>
+                    <p data-ko>
+                        또한, 풍부한 <strong>불포화지방산</strong>으로 인슐린의 민감성을 개선해 혈당조절을 돕고 혈액생성 및 순환작용을 통해 당뇨는 물론 고혈압, 동맥경화, 각종 성인병 예방에 탁월합니다.
+                    </p>
+                    <p data-en>
+                        Additionally, its rich profile of <strong>unsaturated fatty acids</strong> improves insulin sensitivity to safely aid blood sugar regulation. It stimulates healthy blood cell production and fluid circulation dynamics, offering premium protection against diabetes, hypertension, arteriosclerosis, and adult onset chronic diseases.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="products" class="py-12 bg-stone-900 text-stone-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-8">
+                <h2 class="text-2xl font-bold text-amber-400">
+                    <span data-ko>정직한 상품 및 가격 안내</span>
+                    <span data-en>Product Options & Pricing</span>
+                </h2>
+                <div class="w-10 h-0.5 bg-amber-500 mx-auto mt-2"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-stone-950 rounded-xl border border-stone-800 p-5 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-stone-100" data-ko>야곱이네 명품 염소진액</h3>
+                            <h3 class="text-lg font-bold text-stone-100" data-en>Premium Jacob's Elixir</h3>
+                            <span class="bg-amber-500/10 text-amber-400 text-[10px] px-2 py-0.5 rounded font-bold border border-amber-500/20" data-ko>지방 90% 제거</span>
+                            <span class="bg-amber-500/10 text-amber-400 text-[10px] px-2 py-0.5 rounded font-bold border border-amber-500/20" data-en>90% Fat-Free</span>
+                        </div>
+                        <p class="text-xs text-stone-400 mb-4 leading-relaxed" data-ko>• 총 120포 대용량 세트 구성 (1박스 60포 × 2박스) 제공.</p>
+                        <p class="text-xs text-stone-400 mb-4 leading-relaxed" data-en>• Large Volume Bundle: Total of 120 Pouches (2 boxes containing 60 pouches each).</p>
+                    </div>
+                    <div class="border-t border-stone-900 pt-3 text-right">
+                        <span class="text-xl font-black text-amber-400">₩ 600,000 <span class="text-xs font-normal text-stone-400">KRW</span></span>
+                    </div>
+                </div>
+
+                <div class="bg-stone-950 rounded-xl border border-stone-800 p-5 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-stone-100" data-ko>자연방목 생 염소고기 (지육)</h3>
+                            <h3 class="text-xl font-bold text-stone-100" data-en>Fresh Whole / Cut Goat Meat</h3>
+                            <span class="bg-stone-800 text-stone-300 text-[10px] px-2 py-0.5 rounded font-bold" data-ko>신선 즉시택배</span>
+                            <span class="bg-stone-800 text-stone-300 text-[10px] px-2 py-0.5 rounded font-bold" data-en>Fresh Delivery</span>
+                        </div>
+                        <ul class="text-xs text-stone-400 space-y-2 mb-4">
+                            <li class="flex justify-between border-b border-stone-900 pb-1">
+                                <span data-ko>• 염소 1마리 통째 주문 (지육 30kg 기준)</span>
+                                <span data-en>• Whole Wholesale Goat (30kg Basis)</span>
+                                <span class="text-amber-400 font-bold">₩ 700,000</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span data-ko>• 부위별 선택 선별 주문 (1kg당)</span>
+                                <span data-en>• Custom Selected Cuts (per kg)</span>
+                                <span class="text-amber-400 font-bold">₩ 30,000</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="border-t border-stone-900 pt-2 text-right">
+                        <p class="text-[10px] text-emerald-400 font-semibold" data-ko>* 부위별 주문 시 3kg 이상부터 전국 신선 택배 발송 가능</p>
+                        <p class="text-[10px] text-emerald-400 font-semibold" data-en>* Custom cut options require a minimum order of 3kg for shipment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="media" class="py-12 bg-stone-100 border-b border-stone-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-8">
+                <span class="text-[11px] font-bold text-amber-800 bg-amber-200 rounded-full px-2.5 py-0.5 uppercase tracking-wider" data-ko>생생한 농장 풍경</span>
+                <span class="text-[11px] font-bold text-amber-800 bg-amber-200 rounded-full px-2.5 py-0.5 uppercase tracking-wider" data-en>Live Media Shorts</span>
+                <h2 class="text-2xl font-bold tracking-tight text-stone-900 mt-2">
+                    <span data-ko>야곱이네 농장 영상 소식</span>
+                    <span data-en>Our Pasture Video Channels</span>
+                </h2>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl shadow border border-stone-200 max-w-xl mx-auto mb-8">
+                <video controls preload="metadata" class="w-full h-auto rounded-lg shadow-inner bg-stone-950">
+                    <source src="WhatsApp Video 2026-05-21 at 3.53.01 AM.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="text-center text-[11px] text-stone-500 mt-2 font-medium" data-ko>❄️ 겨울철 진악산 눈밭 위를 뛰노는 흑염소들의 건강한 모습</p>
+                <p class="text-center text-[11px] text-stone-500 mt-2 font-medium" data-en>❄️ Our healthy black goats running over snowy pastures on Mount Jinaksan</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+                <a href="https://youtube.com/@jacopgoat-jin?si=aKj2Ne9kJ3Vv5kp6" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-4 border border-stone-200 shadow-sm hover:shadow hover:border-red-300 transition flex items-center space-x-3">
+                    <div class="text-red-600 shrink-0">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-stone-900 text-sm">YouTube Channel ↗</h4>
+                        <p class="text-[11px] text-stone-500" data-ko>농장 유튜브 공식 영상 바로가기</p>
+                        <p class="text-[11px] text-stone-500" data-en>Watch our official YouTube logs</p>
+                    </div>
+                </a>
+
+                <a href="https://www.tiktok.com/@user7908553495769?_r=1&_t=ZS-96XYztS1QZN" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-4 border border-stone-200 shadow-sm hover:shadow hover:border-stone-900 transition flex items-center space-x-3">
+                    <div class="text-stone-900 shrink-0">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.525.02c1.31.01 2.61.1 3.91.26v4.22c-1-.27-2.04-.37-3.08-.3V14.5c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4c.3 0 .59.04.88.11V2.4a8.01 8.01 0 0 1 6.29-2.38z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-stone-900 text-sm">TikTok Shorts ↗</h4>
+                        <p class="text-[11px] text-stone-500" data-ko>틱톡 실시간 일상 소식 확인</p>
+                        <p class="text-[11px] text-stone-500" data-en>Watch short clips on TikTok</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="directions" class="py-12 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-xl p-6 shadow border border-stone-200">
+            <div class="mb-6">
+                <h3 class="text-base font-bold text-stone-900 border-b border-stone-100 pb-2 mb-3 flex items-center gap-1.5">
+                    <span class="w-1 h-3.5 bg-amber-600 rounded"></span>
+                    <span data-ko>▶ 복용방법 ◀</span>
+                    <span data-en>▶ Consumption Instructions ◀</span>
+                </h3>
+                <ol class="space-y-1.5 text-xs sm:text-sm text-stone-600 list-decimal pl-4 leading-relaxed">
+                    <li data-ko><strong>하루 한번 식사 후 1시간 후에 따뜻하게 복용하십시오.</strong></li>
+                    <li data-en><strong>Drink warm once daily, exactly 1 hour following a meal.</strong></li>
+                    <li data-ko>지나치게 자극적인 음식, 술, 면류, 인스턴트 음식은 삼가 주세요.</li>
+                    <li data-en>Please avoid overly spicy foods, alcohol, flour noodles, and processed instant items.</li>
+                    <li class="font-bold text-amber-800" data-ko>즐겁게 드세요.</li>
+                    <li class="font-bold text-amber-800" data-en>Enjoy your healthy consumption journey happily.</li>
+                </ol>
+            </div>
+
+            <div>
+                <h3 class="text-base font-bold text-stone-900 border-b border-stone-100 pb-2 mb-3 flex items-center gap-1.5">
+                    <span class="w-1 h-3.5 bg-amber-600 rounded"></span>
+                    <span data-ko>※ 유의사항 ※</span>
+                    <span data-en>※ Storage and Handling Precautions ※</span>
+                </h3>
+                <ul class="space-y-2 text-xs sm:text-sm text-stone-600 leading-relaxed pl-1">
+                    <li>
+                        <p data-ko><strong>1. 냉장보관 하지 마시고 직사광선을 피해 서늘한 곳에 보관하세요.</strong></p>
+                        <p data-en><strong>1. Do not store in a refrigerator; preserve in a cool place protected from direct sunlight.</strong></p>
+                    </li>
+                    <li>
+                        <p data-ko>2. 진액이 뭉쳐 있을 때는 한약재의 전분성분 때문이니 안심하고 데워서 드세요.</p>
+                        <p data-en>2. Any settling or clumped liquid is due to natural starches from medicinal herbs—it is perfectly safe to heat and consume.</p>
+                    </li>
+                    <li>
+                        <p class="text-red-700 font-semibold" data-ko>3. 전자렌지 이용시 전자렌지용 용기에 담아서 데워 주세요. (파우치 째 가열 금지)</p>
+                        <p class="text-red-700 font-semibold" data-en>3. When using a microwave, pour into a microwave-safe container first. Never place the original pouch directly into the unit.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-stone-200/60 py-12 border-t border-stone-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                
+                <div class="lg:col-span-6 space-y-3">
+                    <h2 class="text-xl font-bold text-stone-900">
+                        <span data-ko>야곱이네 농장 문의 및 위치</span>
+                        <span data-en>Contact & Farm Location</span>
+                    </h2>
+                    <div class="text-xs sm:text-sm space-y-1.5 text-stone-800">
+                        <p class="font-semibold">📍 <span data-ko>주소: 충남 금산군 금산읍 진악로 672-22</span><span data-en>Address: 672-22 Jinak-ro, Geumsan-eup, Geumsan-gun, Chungnam</span></p>
+                        <p class="font-bold">☎️ <span>전화번호: <a href="tel:041-754-8255" class="underline hover:text-amber-800 text-base">041-754-8255</a></span></p>
+                    </div>
+                    <p class="text-[11px] text-stone-500 leading-relaxed" data-ko>
+                        ※ 저희 주소지는 진악산골프클럽 바로 옆 건물에 나란히 자리잡고 있습니다. 찾아오실 때 참고하시기 바랍니다.
+                    </p>
+                    <p class="text-[11px] text-stone-500 leading-relaxed" data-en>
+                        ※ Our facility stands right next to the Jinaksan Golf Club complex. Please look for local golf club road indicators when navigating to us.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-6 bg-white p-5 rounded-xl border border-stone-300 text-center shadow-sm">
+                    <p class="font-bold text-stone-900 text-xs sm:text-sm" data-ko>네이버 지도 / 티맵 통합 등록 주소</p>
+                    <p class="font-bold text-stone-900 text-xs sm:text-sm" data-en>Naver Map Navigation Address</p>
+                    <p class="text-[11px] text-stone-500 mt-1">충청남도 금산군 금산읍 진악로 672-22 (야곱이네 염소)</p>
+                    <div class="mt-3">
+                        <a href="https://map.naver.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-stone-900 text-white text-xs font-semibold px-4 py-2 rounded hover:bg-stone-800 transition">
+                            🗺️ <span data-ko>네이버 지도로 열기</span><span data-en>Open Naver Maps</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-950 text-stone-500 text-[11px] py-6 border-t border-stone-900">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="text-center sm:text-left">
+                <p class="font-bold text-stone-300 text-xs" data-ko>야곱이네 염소진액</p>
+                <p class="font-bold text-stone-300 text-xs" data-en>Jacob's Goat Farm</p>
+                <p>Tel: 041-754-8255 | 충남 금산군 금산읍 진악로 672-22</p>
+            </div>
+            <p>&copy; 2026 야곱이네 염소진액. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleLanguage() {
+            const body = document.body;
+            const langBtnText = document.getElementById('langBtnText');
+            
+            if (body.classList.contains('lang-ko')) {
+                body.classList.remove('lang-ko');
+                body.classList.add('lang-en');
+                langBtnText.innerText = '한국어';
+            } else {
+                body.classList.remove('lang-en');
+                body.classList.add('lang-ko');
+                langBtnText.innerText = 'English';
+            }
+        }
+    </script>
+</body>
+</html>
